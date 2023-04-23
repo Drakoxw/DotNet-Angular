@@ -12,8 +12,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\app\Components\" />
-    <Folder Include="src\app\Models\" />
+    <Folder Include="src\app\Constants\" />
+    <Folder Include="src\app\Models\Interfaces\Payloads\" />
+    <Folder Include="src\app\Models\Interfaces\Responses\" />
+    <Folder Include="src\app\Models\Types\" />
     <Folder Include="src\app\Services\" />
     <Folder Include="src\app\Views\" />
-  </ItemGroup> 
+  </ItemGroup>
 </Project>
