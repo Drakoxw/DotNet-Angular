@@ -11,4 +11,5 @@ export const routes: Routes = [
   { path: '', redirectTo: `/${RoutesPath.FOREST}`, pathMatch: 'full' },
   { path: RoutesPath.FOREST, component: ForestCastComponent },
   { path: RoutesPath.CARDS, component: CardsComponent },
+  { path: '**', redirectTo: `/${RoutesPath.FOREST}` }
 ];
