@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { HttpService } from '../../Services/http.service';
 
 interface WeatherForecast {
   date: string;
@@ -17,8 +17,8 @@ export class ForestCastComponent {
 
   public forecasts?: WeatherForecast[];
 
-  constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
+  constructor(private http: HttpService) {
+    this.http.GetForestCast().subscribe(result => {
       this.forecasts = result;
     }, error => console.error(error));
   }
