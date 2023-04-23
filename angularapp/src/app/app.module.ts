@@ -9,6 +9,7 @@ import { MessageComponent } from './Components/message/message.component';
 import { ChatComponent } from './Views/chat/chat.component';
 import { CardsComponent } from './Views/cards/cards.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { ForestCastComponent } from './Views/forest-cast/forest-cast.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
     MessageComponent,
     ChatComponent,
     CardsComponent,
-    NavBarComponent
+    NavBarComponent,
+    ForestCastComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule
