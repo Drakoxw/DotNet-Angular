@@ -15,7 +15,7 @@ export class NavBarComponent{
 
   routeActiveClass = 'block py-2 pl-3 pr-4 text-white bg-blue-700 rounded'
 
-  routeNoactiveClass = 'block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+  routeNoactiveClass = 'block py-2 pl-3 pr-4 text-gray-900 rounded bg-gray-50 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
 
   constructor() { }
 
