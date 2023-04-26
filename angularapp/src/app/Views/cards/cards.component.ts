@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
+  disableButton:boolean = false
+  load:boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  log(ev: any) {
+    this.disableButton = true
+    this.load = true
+    console.log('loreclick', ev)
   }
 
 }

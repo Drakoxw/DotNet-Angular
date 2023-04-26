@@ -1,10 +1,13 @@
 <section class="p-4">
-  <h1 class="font-extrabold md:text-5xl lg:text-4xl dark:text-white">Tarjeta de Credito</h1>
+  <h1 class="font-extrabold md:text-5xl lg:text-4xl dark:text-white">
+    Tarjeta de Credito
+  </h1>
 
   <div class="mt-3">
-    <app-button styleButton="darkPills">Agg Tarjeta</app-button>
+    <app-button [isLoading]="load" [isDisable]="disableButton"
+      styleButton="darkPills"
+      (buttonClick)="log($event)"
+      >Agg Tarjeta</app-button
+    >
   </div>
-
 </section>
-
-
