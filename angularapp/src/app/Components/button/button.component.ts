@@ -10,56 +10,7 @@ const classZises = {
 const spanClass =
   'relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0';
 
-type stylesButton = {
-  default: string;
-  alternative: string;
-  dark: string;
-  light: string;
-  green: string;
-  red: string;
-  yellow: string;
-  purple: string;
-  defaultPills: string;
-  alternativePills: string;
-  darkPills: string;
-  greenPills: string;
-  redPills: string;
-  yellowPills: string;
-  lightPills: string;
-  purplePills: string;
-  defaultGradMono: string;
-  greenGradMono: string;
-  cyanGradMono: string;
-  tealGradMono: string;
-  limeGradMono: string;
-  redGradMono: string;
-  pinkGradMono: string;
-  purpleGradMono: string;
-  defaultColoredShadows: string;
-  greenColoredShadows: string;
-  cyanColoredShadows: string;
-  tealColoredShadows: string;
-  limeColoredShadows: string;
-  redColoredShadows: string;
-  pinkColoredShadows: string;
-  purpleColoredShadows: string;
-  pinkToOrageGradientDuotone: string;
-  purpleToBlueGradientDuotone: string;
-  cyanToBlueGradientDuotone: string;
-  greenToBlueGradientDuotone: string;
-  purpleToPinkGradientDuotone: string;
-  tealToLimeGradientDuotone: string;
-  redToYellowGradientDuotone: string;
-  purpleToBlueGradientOutline: string;
-  pinkToOrangeGradientOutline: string;
-  cyanToBlueGradientOutline: string;
-  greenToBlueGradientOutline: string;
-  purpleToPinkGradientOutline: string;
-  tealToLimeGradientOutline: string;
-  redToYellowGradientOutline: string;
-};
-
-const classesButton: stylesButton = {
+const classesButton = {
   default:
     'mr-2 mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800',
   alternative:
@@ -154,7 +105,7 @@ const classesButton: stylesButton = {
 
 type Size = 'xsm' | 'sm' | 'base' | 'lg' | 'xlg';
 
-type StyleButton = keyof stylesButton;
+type StyleButton = keyof typeof classesButton;
 
 @Component({
   selector: 'app-button',
