@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { ChatComponent } from './Views/chat/chat.component';
 import { CardsComponent } from './Views/cards/cards.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { ForestCastComponent } from './Views/forest-cast/forest-cast.component';
+import { ButtonComponent } from './Components/button/button.component';
+import { DocComponent } from './Views/doc/doc.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +21,12 @@ import { ForestCastComponent } from './Views/forest-cast/forest-cast.component';
     ChatComponent,
     CardsComponent,
     NavBarComponent,
-    ForestCastComponent
+    ForestCastComponent,
+    ButtonComponent,
+    DocComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, AppRoutingModule
+    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

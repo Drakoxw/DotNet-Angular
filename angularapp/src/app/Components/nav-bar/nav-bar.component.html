@@ -22,6 +22,12 @@
                 Tarjetas de Credito
               </a>
             </li>
+            <li>
+              <a [routerLink]="routes.COMP_DOC" routerLinkActive #rla_m3="routerLinkActive"
+                 [class]=" rla_m3.isActive ? 'text-blue-700' : 'text-gray-900 dark:text-white hover:underline' ">
+                Doc
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -51,6 +57,12 @@
         <a [routerLink]="routes.CARDS" routerLinkActive #rla2="routerLinkActive"
            [class]=" rla2.isActive ? routeActiveClass : routeNoactiveClass">
           Tarjetas de Credito
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="routes.CARDS" routerLinkActive #rla3="routerLinkActive"
+           [class]=" rla3.isActive ? routeActiveClass : routeNoactiveClass">
+          Doc
         </a>
       </li>
     </ul>

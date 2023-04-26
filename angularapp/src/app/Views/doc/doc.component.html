@@ -1,0 +1,152 @@
+<section class="p-3">
+  <div class="sizes fixed top-20 right-8 w-48">
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="flex justify-end p-4 flex-col">
+        <label
+          for="sizes"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Elige un tamaño</label>
+        <select id="sizes" [(ngModel)]="size"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option *ngFor="let siz of sizes" [value]="siz">{{ siz }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-extrabold md:text-5xl lg:text-2xl dark:text-white">
+      Style Default
+    </h1>
+
+    <div class="flex gap-4 flex-wrap mt-2">
+      <app-button [size]="size" styleButton="default">default</app-button>
+      <app-button [size]="size" styleButton="alternative">alternative</app-button>
+      <app-button [size]="size" styleButton="dark">dark</app-button>
+      <app-button [size]="size" styleButton="light">light</app-button>
+      <app-button [size]="size" styleButton="green">green</app-button>
+      <app-button [size]="size" styleButton="red">red</app-button>
+      <app-button [size]="size" styleButton="yellow">yellow</app-button>
+      <app-button [size]="size" styleButton="purple">purple</app-button>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-extrabold md:text-5xl lg:text-2xl dark:text-white">
+      Style Pills
+    </h1>
+
+    <div class="flex gap-4 flex-wrap mt-2">
+      <app-button [size]="size" styleButton="defaultPills">defaultPills</app-button>
+      <app-button [size]="size" styleButton="alternativePills">alternativePills</app-button>
+      <app-button [size]="size" styleButton="darkPills">darkPills</app-button>
+      <app-button [size]="size" styleButton="lightPills">lightPills</app-button>
+      <app-button [size]="size" styleButton="greenPills">greenPills</app-button>
+      <app-button [size]="size" styleButton="redPills">redPills</app-button>
+      <app-button [size]="size" styleButton="yellowPills">yellowPills</app-button>
+      <app-button [size]="size" styleButton="purplePills">purplePills</app-button>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-extrabold md:text-5xl lg:text-2xl dark:text-white">
+      Style Gradient Monochrome
+    </h1>
+    <div class="flex gap-4 flex-wrap mt-2">
+      <app-button [size]="size" styleButton="defaultGradMono">defaultGradMono</app-button>
+      <app-button [size]="size" styleButton="greenGradMono">greenGradMono</app-button>
+      <app-button [size]="size" styleButton="cyanGradMono">cyanGradMono</app-button>
+      <app-button [size]="size" styleButton="tealGradMono">tealGradMono</app-button>
+      <app-button [size]="size" styleButton="limeGradMono">limeGradMono</app-button>
+      <app-button [size]="size" styleButton="redGradMono">redGradMono</app-button>
+      <app-button [size]="size" styleButton="pinkGradMono">pinkGradMono</app-button>
+      <app-button [size]="size" styleButton="purpleGradMono">purpleGradMono</app-button>
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-extrabold md:text-5xl lg:text-2xl dark:text-white">
+      Style Colored Shadows
+    </h1>
+    <div class="flex gap-4 flex-wrap mt-2">
+      <app-button [size]="size" styleButton="defaultColoredShadows"
+        >defaultColoredShadows</app-button
+      >
+      <app-button [size]="size" styleButton="greenColoredShadows"
+        >greenColoredShadows</app-button
+      >
+      <app-button [size]="size" styleButton="cyanColoredShadows"
+        >cyanColoredShadows</app-button
+      >
+      <app-button [size]="size" styleButton="tealColoredShadows"
+        >tealColoredShadows</app-button
+      >
+      <app-button [size]="size" styleButton="limeColoredShadows"
+        >limeColoredShadows</app-button
+      >
+      <app-button [size]="size" styleButton="redColoredShadows">redColoredShadows</app-button>
+      <app-button [size]="size" styleButton="pinkColoredShadows"
+        >pinkColoredShadows</app-button
+      >
+      <app-button [size]="size" styleButton="purpleColoredShadows"
+        >purpleColoredShadows</app-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-extrabold md:text-5xl lg:text-2xl dark:text-white">
+      Style Gradient Duotone
+    </h1>
+    <div class="flex gap-4 flex-wrap mt-2">
+
+      <app-button [size]="size" styleButton="purpleToBlueGradientDuotone"
+        >purpleToBlueGradientDuotone</app-button
+      >
+      <app-button [size]="size" styleButton="cyanToBlueGradientDuotone"
+        >cyanToBlueGradientDuotone</app-button
+      >
+      <app-button [size]="size" styleButton="greenToBlueGradientDuotone"
+        >greenToBlueGradientDuotone</app-button
+      >
+      <app-button [size]="size" styleButton="purpleToPinkGradientDuotone"
+        >purpleToPinkGradientDuotone</app-button
+      >
+      <app-button [size]="size" styleButton="tealToLimeGradientDuotone"
+        >tealToLimeGradientDuotone</app-button
+      >
+      <app-button [size]="size" styleButton="redToYellowGradientDuotone"
+        >redToYellowGradientDuotone</app-button
+      >
+    </div>
+  </div>
+
+  <div>
+    <h1 class="font-extrabold md:text-5xl lg:text-2xl dark:text-white">
+      Style Gradient Outline
+    </h1>
+
+    <div class="flex gap-4 flex-wrap mt-2">
+
+      <app-button [size]="size" styleButton="purpleToBlueGradientOutline"
+        >purpleToBlueGradientOutline</app-button
+      >
+      <app-button [size]="size" styleButton="cyanToBlueGradientOutline"
+        >cyanToBlueGradientOutline</app-button
+      >
+      <app-button [size]="size" styleButton="greenToBlueGradientOutline"
+        >greenToBlueGradientOutline</app-button
+      >
+      <app-button [size]="size" styleButton="purpleToPinkGradientOutline"
+        >purpleToPinkGradientOutline</app-button
+      >
+      <app-button [size]="size" styleButton="tealToLimeGradientOutline"
+        >tealToLimeGradientOutline</app-button
+      >
+      <app-button [size]="size" styleButton="redToYellowGradientOutline"
+        >redToYellowGradientOutline</app-button
+      >
+    </div>
+  </div>
+</section>
