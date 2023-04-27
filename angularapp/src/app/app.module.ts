@@ -1,5 +1,5 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,6 +13,9 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { ForestCastComponent } from './Views/forest-cast/forest-cast.component';
 import { ButtonComponent } from './Components/button/button.component';
 import { DocComponent } from './Views/doc/doc.component';
+import { CardListComponent } from './Components/creditCard/card-list/card-list.component';
+import { CardFormComponent } from './Components/creditCard/card-form/card-form.component';
+import { HttpRequestInterceptor } from './Core/http-request.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,18 @@ import { DocComponent } from './Views/doc/doc.component';
     NavBarComponent,
     ForestCastComponent,
     ButtonComponent,
-    DocComponent
+    DocComponent,
+    CardListComponent,
+    CardFormComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpRequestInterceptor,
+    multi: true
+   }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

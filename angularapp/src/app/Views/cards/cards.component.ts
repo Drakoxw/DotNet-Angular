@@ -1,24 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { CreditCardService } from 'src/app/Services/credit-card.service';
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements OnInit {
+export class CardsComponent implements OnDestroy {
 
-  disableButton:boolean = false
-  load:boolean = false
+  constructor(private cardServ: CreditCardService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  log(ev: any) {
-    this.disableButton = true
-    this.load = true
-    console.log('loreclick', ev)
+  ngOnDestroy(): void {
+    this.cardServ.destroyed()
   }
 
 }

@@ -7,6 +7,7 @@ namespace webapi.Models
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options) { }
 
         public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<UserApp> UserApp { get; set; }
 
     }
 }

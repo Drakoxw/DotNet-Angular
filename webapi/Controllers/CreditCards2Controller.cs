@@ -11,16 +11,16 @@ namespace webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CreditCardsController : ControllerBase
+    public class CreditCards2Controller : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public CreditCardsController(AppDbContext context)
+        public CreditCards2Controller(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/CreditCards
+        // GET: api/CreditCards2
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CreditCard>>> GetCreditCards()
         {
@@ -31,7 +31,7 @@ namespace webapi.Controllers
             return await _context.CreditCards.ToListAsync();
         }
 
-        // GET: api/CreditCards/5
+        // GET: api/CreditCards2/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CreditCard>> GetCreditCard(int id)
         {
@@ -49,7 +49,7 @@ namespace webapi.Controllers
             return creditCard;
         }
 
-        // PUT: api/CreditCards/5
+        // PUT: api/CreditCards2/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCreditCard(int id, CreditCard creditCard)
@@ -80,7 +80,7 @@ namespace webapi.Controllers
             return NoContent();
         }
 
-        // POST: api/CreditCards
+        // POST: api/CreditCards2
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<CreditCard>> PostCreditCard(CreditCard creditCard)
@@ -95,7 +95,7 @@ namespace webapi.Controllers
             return CreatedAtAction("GetCreditCard", new { id = creditCard.Id }, creditCard);
         }
 
-        // DELETE: api/CreditCards/5
+        // DELETE: api/CreditCards2/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCreditCard(int id)
         {

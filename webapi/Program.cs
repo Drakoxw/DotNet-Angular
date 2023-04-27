@@ -14,11 +14,16 @@ builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("StringContext"))
 );
 
-builder.Services.AddCors(
-    options => options.AddPolicy(
-        "AllowWebApp", build => build.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
-    )
-);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("appCors", app =>
+    {
+        app.AllowAnyHeader()
+        .AllowAnyOrigin() 
+        .AllowAnyMethod();
+    });
+
+});
 
 var app = builder.Build();
 
@@ -30,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("appCors");
 
 app.UseAuthorization();
 
