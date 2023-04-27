@@ -1,0 +1,2659 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "ForecastResponse",
+            "id": "interface-ForecastResponse-04df523035919dbbd493e167b4dd4ed51334a09addc971f27cbaf706c556b2a8e3648cf2ca8286c21de0f09ef743ce4ed1bbab2d8989da8780c1a9834a765342",
+            "file": "src/app/Models/Interfaces/Responses/forest.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ForecastResponse {\n  date: string;\n  temperatureC: number;\n  temperatureF: number;\n  summary: string;\n}\n",
+            "properties": [
+                {
+                    "name": "date",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "summary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "temperatureC",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "temperatureF",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "IRoutesPath",
+            "id": "interface-IRoutesPath-4cd8c767f68d9ea096de57c880c9fb05224a6386878c598221ddf93d02573bdb44edcac24f9575ebc273747f5bc7d45848767b2b7e0546f902819db77192b20c",
+            "file": "src/app/Models/Interfaces/common.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface IRoutesPath {\r\n  CARDS: string\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "CARDS",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "src/stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        },
+        {
+            "name": "WeatherForecast",
+            "id": "interface-WeatherForecast-b50d648456df6fab277f96ab8a5d27e7b122406e01f9969dc8e355e65a60674441e4138e38419922f9dff5f0732a04e6baa0303e67c4084ce5bbc0102195ce1b",
+            "file": "src/app/Views/forest-cast/forest-cast.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component} from '@angular/core';\nimport { HttpService } from '../../Services/http.service';\r\n\ninterface WeatherForecast {\n  date: string;\n  temperatureC: number;\n  temperatureF: number;\n  summary: string;\n}\n\n@Component({\n  selector: 'app-forest-cast',\n  templateUrl: './forest-cast.component.html',\n  styleUrls: ['./forest-cast.component.css']\n})\nexport class ForestCastComponent {\n\n  public forecasts?: WeatherForecast[];\n\n  constructor(private http: HttpService) {\n    this.http.GetForestCast().subscribe(result => {\n      this.forecasts = result;\n    }, error => console.error(error));\n  }\n\n}\n",
+            "properties": [
+                {
+                    "name": "date",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "summary",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "temperatureC",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "temperatureF",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "HttpService",
+            "id": "injectable-HttpService-639f3c106ba2b64505a6a35979e24d26912e5a73da9abced2636e5ba6e7ea271b349769bd497a3d68c012410801c2a3d4bf40706473cb9a54c44dd83291dc79a",
+            "file": "src/app/Services/http.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "GetForestCast",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { ForecastResponse } from '../Models/Interfaces/Responses';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class HttpService {\n  constructor(private http: HttpClient) { }\n\n  GetForestCast() {\n    return this.http.get<ForecastResponse[]>('/weatherforecast')\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-dbcc620be7b7abbeb3eddc86047a8defb9f19781820adaa5f74f2fb1e9b1b4abbb86b7222048a7d2e3b7f2392bf616ccdb5c7bae058fdf19d35770e246489c88",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'angularapp'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\n\nexport class AppComponent {\n  title = 'angularapp';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n<main class=\"flex flex-col gap-4\">\r\n  <app-nav-bar></app-nav-bar>\r\n\r\n  <router-outlet></router-outlet>\r\n</main>\r\n\r\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-a53fd738b978780d39fb5fcc9ae4cfe0088e57a1f6ce674862d57dab9192140bd1c05548a9910db0469a431142886e658ff2e761f15781b2ad430e58d64724d0",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 34,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 48,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  imports: [CommonModule],\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 50
+                    }
+                }
+            }
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-8bd162aa041bf17dc44667aba2d4b91f9574ea0a6561c576a4fe0585958320a1ae91d0d45634466b21229eeedb834553e28e973e11c37163c6ff050ad36aa688-1",
+            "file": "src/app/Components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isDisable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 117,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isLoading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 123,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 120,
+                    "type": "Size",
+                    "decorators": []
+                },
+                {
+                    "name": "styleButton",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 116,
+                    "type": "StyleButton",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "buttonClick",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 115,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "active",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 128
+                },
+                {
+                    "name": "classButton",
+                    "defaultValue": "classesButton.default",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 131
+                },
+                {
+                    "name": "classDisable",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 132
+                },
+                {
+                    "name": "classText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 130
+                },
+                {
+                    "name": "classZise",
+                    "defaultValue": "classZises.base",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 129
+                },
+                {
+                    "name": "load",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 127
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changeSize",
+                    "args": [
+                        {
+                            "name": "s",
+                            "type": "Size",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 167,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "s",
+                            "type": "Size",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "emitClick",
+                    "args": [
+                        {
+                            "name": "_",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 153,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "_",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 134,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setDisable",
+                    "args": [
+                        {
+                            "name": "disable",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 159,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "disable",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\nconst classZises = {\r\n  xsm: 'px-3 py-2 text-xs',\r\n  sm: 'px-3 py-2 text-sm',\r\n  base: 'text-sm px-5 py-2.5',\r\n  lg: 'px-5 py-3 text-base',\r\n  xlg: 'text-base px-6 py-3.5',\r\n};\r\nconst spanClass =\r\n  'relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0';\r\n\r\nconst classesButton = {\r\n  default:\r\n    'mr-2 mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800',\r\n  alternative:\r\n    'mr-2 mb-2 font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700',\r\n  dark: 'mr-2 mb-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',\r\n  light:\r\n    'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',\r\n  green:\r\n    'focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg  mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',\r\n  red: 'focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg  mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',\r\n  yellow:\r\n    'focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg mr-2 mb-2 dark:focus:ring-yellow-900',\r\n  purple:\r\n    'focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',\r\n  defaultPills:\r\n    'text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',\r\n  alternativePills:\r\n    'mr-2 mb-2  font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700',\r\n  darkPills:\r\n    'mr-2 mb-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',\r\n  greenPills:\r\n    'mr-2 mb-2 text-white bg-green-700 hover:bg-greeen-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full  text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900',\r\n  lightPills:\r\n    'mr-2 mb-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200  font-medium rounded-full  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',\r\n  redPills:\r\n    'mr-2 mb-2 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full  text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',\r\n  yellowPills:\r\n    'mr-2 mb-2 text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full  text-center dark:focus:ring-yellow-900',\r\n  purplePills:\r\n    'mb-2 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full  text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',\r\n  defaultGradMono:\r\n    'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenGradMono:\r\n    'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanGradMono:\r\n    'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealGradMono:\r\n    'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  limeGradMono:\r\n    'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redGradMono:\r\n    'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkGradMono:\r\n    'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleGradMono:\r\n    'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  defaultColoredShadows:\r\n    'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenColoredShadows:\r\n    'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanColoredShadows:\r\n    'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealColoredShadows:\r\n    'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  limeColoredShadows:\r\n    'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redColoredShadows:\r\n    'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkColoredShadows:\r\n    'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleColoredShadows:\r\n    'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToPinkGradientDuotone:\r\n    'text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkToOrageGradientDuotone:\r\n    'text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealToLimeGradientDuotone:\r\n    'text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redToYellowGradientDuotone:\r\n    'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800',\r\n  cyanToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800',\r\n  greenToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800',\r\n  purpleToPinkGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800',\r\n  tealToLimeGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800',\r\n  redToYellowGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400',\r\n  pinkToOrangeGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800',\r\n};\r\n\r\ntype Size = 'xsm' | 'sm' | 'base' | 'lg' | 'xlg';\r\n\r\ntype StyleButton = keyof typeof classesButton;\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n})\r\nexport class ButtonComponent implements OnInit {\r\n  @Output() buttonClick = new EventEmitter<string>();\r\n  @Input() styleButton: StyleButton = 'default';\r\n  @Input() set isDisable(d: boolean) {\r\n    this.setDisable(d);\r\n  }\r\n  @Input() set size(s: Size) {\r\n    this.changeSize(s);\r\n  }\r\n  @Input() set isLoading(load: boolean) {\r\n    this.load = load;\r\n  }\r\n\r\n  load: boolean = false;\r\n  active: boolean = true;\r\n  classZise: string = classZises.base;\r\n  classText: string = '';\r\n  classButton: string = classesButton.default;\r\n  classDisable: string = '';\r\n\r\n  ngOnInit(): void {\r\n    if (this.styleButton) {\r\n      this.classText = '';\r\n      this.classButton = classesButton[this.styleButton]\r\n      const classesOutline = [\r\n        'pinkToOrangeGradientOutline',\r\n        'redToYellowGradientOutline',\r\n        'purpleToBlueGradientOutline',\r\n        'cyanToBlueGradientOutline',\r\n        'greenToBlueGradientOutline',\r\n        'purpleToPinkGradientOutline',\r\n        'tealToLimeGradientOutline',\r\n      ];\r\n      if (classesOutline.includes(this.styleButton)) {\r\n        this.classText = `${classZises.base} ${spanClass}`;\r\n      }\r\n    }\r\n  }\r\n\r\n  emitClick(_: Event): void {\r\n    if (!this.load && this.active) {\r\n      this.buttonClick.emit('clicked');\r\n    }\r\n  }\r\n\r\n  setDisable(disable: boolean): void {\r\n    if (disable) {\r\n      this.classDisable = '!cursor-not-allowed !opacity-70';\r\n    } else {\r\n      this.classDisable = '';\r\n    }\r\n  }\r\n\r\n  changeSize(s: Size): void {\r\n    if (this.styleButton.includes('Outline')) {\r\n      this.classZise = '';\r\n      this.classText = `${spanClass} ${classZises[s]}`;\r\n    } else {\r\n      this.classZise = classZises[s];\r\n    }\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "isDisable": {
+                    "name": "isDisable",
+                    "setSignature": {
+                        "name": "isDisable",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "d",
+                                "type": "boolean",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 117,
+                        "jsdoctags": [
+                            {
+                                "name": "d",
+                                "type": "boolean",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "size": {
+                    "name": "size",
+                    "setSignature": {
+                        "name": "size",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "s",
+                                "type": "Size",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 120,
+                        "jsdoctags": [
+                            {
+                                "name": "s",
+                                "type": "Size",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "isLoading": {
+                    "name": "isLoading",
+                    "setSignature": {
+                        "name": "isLoading",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "load",
+                                "type": "boolean",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 123,
+                        "jsdoctags": [
+                            {
+                                "name": "load",
+                                "type": "boolean",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
+            "templateData": "<div (click)=\"emitClick($event)\">\r\n  <button [ngClass]=\"[classButton, classZise, classDisable]\" >\r\n    <span [ngClass]=\"[classText, 'flex gap-2']\">\r\n\r\n      <ng-content ></ng-content>\r\n\r\n      <span id=\"loading\" *ngIf=\"load\">\r\n        <svg aria-hidden=\"true\" role=\"status\" class=\"inline w-4 h-4 text-white animate-spin\" viewBox=\"0 0 100 101\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <path d=\"M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z\" fill=\"#E5E7EB\"/>\r\n          <path d=\"M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z\" fill=\"currentColor\"/>\r\n        </svg>\r\n      </span>\r\n\r\n    </span>\r\n  </button>\r\n</div>\r\n"
+        },
+        {
+            "name": "CardsComponent",
+            "id": "component-CardsComponent-287c14a478ead4291af1347569a583d6b70dd40ec45bf9fbf97840724e6a5f26a39ba270628ffc030e27134223b503083504cbfff3236829056c47f69e03c383",
+            "file": "src/app/Views/cards/cards.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-cards",
+            "styleUrls": [
+                "./cards.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./cards.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "disableButton",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "load",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "log",
+                    "args": [
+                        {
+                            "name": "ev",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "ev",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-cards',\n  templateUrl: './cards.component.html',\n  styleUrls: ['./cards.component.css']\n})\nexport class CardsComponent implements OnInit {\n\n  disableButton:boolean = false\n  load:boolean = false\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  log(ev: any) {\n    this.disableButton = true\n    this.load = true\n    console.log('loreclick', ev)\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./cards.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"p-4\">\r\n  <h1 class=\"font-extrabold md:text-5xl lg:text-4xl dark:text-white\">\r\n    Tarjeta de Credito\r\n  </h1>\r\n\r\n  <div class=\"mt-3\">\r\n    <app-button [isLoading]=\"load\" [isDisable]=\"disableButton\"\r\n      styleButton=\"cyanColoredShadows\"\r\n      (buttonClick)=\"log($event)\"\r\n      >Agg Tarjeta</app-button\r\n    >\r\n  </div>\r\n</section>\r\n"
+        },
+        {
+            "name": "ChatComponent",
+            "id": "component-ChatComponent-4e23c23db04bb436bcf41a3a70b0f99d028c220874a884203c52f59924c6bbecfb462341aa9e4127dbfcfab12848e20a207dc5c158a450f6502183ce18963182",
+            "file": "src/app/Views/chat/chat.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-chat",
+            "styleUrls": [
+                "./chat.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chat.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-chat',\n  templateUrl: './chat.component.html',\n  styleUrls: ['./chat.component.css']\n})\nexport class ChatComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./chat.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>chat works!</p>\n"
+        },
+        {
+            "name": "DocComponent",
+            "id": "component-DocComponent-fa40fdb7bde3685770d37d373b5783cddfe31c5f0827a5a4f9c82b76ca612f5cd1154b8ca68ad47b0d5429f357d27056aba278c4ba08f9b8f10b5b6bcd00da25",
+            "file": "src/app/Views/doc/doc.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-doc",
+            "styleUrls": [
+                "./doc.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./doc.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'base'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Size",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "sizes",
+                    "defaultValue": "['xsm', 'sm', 'base', 'lg', 'xlg']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Size[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\ntype Size = 'xsm' | 'sm' | 'base' | 'lg' | 'xlg'\n\n@Component({\n  selector: 'app-doc',\n  templateUrl: './doc.component.html',\n  styleUrls: ['./doc.component.css']\n})\nexport class DocComponent {\n\n  sizes: Size[] = ['xsm', 'sm', 'base', 'lg', 'xlg']\n  size: Size = 'base'\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./doc.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"p-3\">\n  <div class=\"sizes fixed top-20 right-8 w-48\">\n    <div class=\"w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700\">\n      <div class=\"flex justify-end p-4 flex-col\">\n        <label\n          for=\"sizes\"\n          class=\"block mb-2 text-sm font-medium text-gray-900 dark:text-white\"\n          >Elige un tamaño</label>\n        <select id=\"sizes\" [(ngModel)]=\"size\"\n          class=\"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500\"\n        >\n          <option *ngFor=\"let siz of sizes\" [value]=\"siz\">{{ siz }}</option>\n        </select>\n      </div>\n    </div>\n  </div>\n\n  <div>\n    <h1 class=\"font-extrabold md:text-5xl lg:text-2xl dark:text-white\">\n      Style Default\n    </h1>\n\n    <div class=\"flex gap-4 flex-wrap mt-2\">\n      <app-button [size]=\"size\" styleButton=\"default\">default</app-button>\n      <app-button [size]=\"size\" styleButton=\"alternative\">alternative</app-button>\n      <app-button [size]=\"size\" styleButton=\"dark\">dark</app-button>\n      <app-button [size]=\"size\" styleButton=\"light\">light</app-button>\n      <app-button [size]=\"size\" styleButton=\"green\">green</app-button>\n      <app-button [size]=\"size\" styleButton=\"red\">red</app-button>\n      <app-button [size]=\"size\" styleButton=\"yellow\">yellow</app-button>\n      <app-button [size]=\"size\" styleButton=\"purple\">purple</app-button>\n    </div>\n  </div>\n\n  <div>\n    <h1 class=\"font-extrabold md:text-5xl lg:text-2xl dark:text-white\">\n      Style Pills\n    </h1>\n\n    <div class=\"flex gap-4 flex-wrap mt-2\">\n      <app-button [size]=\"size\" styleButton=\"defaultPills\">defaultPills</app-button>\n      <app-button [size]=\"size\" styleButton=\"alternativePills\">alternativePills</app-button>\n      <app-button [size]=\"size\" styleButton=\"darkPills\">darkPills</app-button>\n      <app-button [size]=\"size\" styleButton=\"lightPills\">lightPills</app-button>\n      <app-button [size]=\"size\" styleButton=\"greenPills\">greenPills</app-button>\n      <app-button [size]=\"size\" styleButton=\"redPills\">redPills</app-button>\n      <app-button [size]=\"size\" styleButton=\"yellowPills\">yellowPills</app-button>\n      <app-button [size]=\"size\" styleButton=\"purplePills\">purplePills</app-button>\n    </div>\n  </div>\n\n  <div>\n    <h1 class=\"font-extrabold md:text-5xl lg:text-2xl dark:text-white\">\n      Style Gradient Monochrome\n    </h1>\n    <div class=\"flex gap-4 flex-wrap mt-2\">\n      <app-button [size]=\"size\" styleButton=\"defaultGradMono\">defaultGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"greenGradMono\">greenGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"cyanGradMono\">cyanGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"tealGradMono\">tealGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"limeGradMono\">limeGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"redGradMono\">redGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"pinkGradMono\">pinkGradMono</app-button>\n      <app-button [size]=\"size\" styleButton=\"purpleGradMono\">purpleGradMono</app-button>\n    </div>\n  </div>\n\n  <div>\n    <h1 class=\"font-extrabold md:text-5xl lg:text-2xl dark:text-white\">\n      Style Colored Shadows\n    </h1>\n    <div class=\"flex gap-4 flex-wrap mt-2\">\n      <app-button [size]=\"size\" styleButton=\"defaultColoredShadows\"\n        >defaultColoredShadows</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"greenColoredShadows\"\n        >greenColoredShadows</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"cyanColoredShadows\"\n        >cyanColoredShadows</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"tealColoredShadows\"\n        >tealColoredShadows</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"limeColoredShadows\"\n        >limeColoredShadows</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"redColoredShadows\">redColoredShadows</app-button>\n      <app-button [size]=\"size\" styleButton=\"pinkColoredShadows\"\n        >pinkColoredShadows</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"purpleColoredShadows\"\n        >purpleColoredShadows</app-button\n      >\n    </div>\n  </div>\n\n  <div>\n    <h1 class=\"font-extrabold md:text-5xl lg:text-2xl dark:text-white\">\n      Style Gradient Duotone\n    </h1>\n    <div class=\"flex gap-4 flex-wrap mt-2\">\n\n      <app-button [size]=\"size\" styleButton=\"purpleToBlueGradientDuotone\"\n        >purpleToBlueGradientDuotone</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"cyanToBlueGradientDuotone\"\n        >cyanToBlueGradientDuotone</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"greenToBlueGradientDuotone\"\n        >greenToBlueGradientDuotone</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"purpleToPinkGradientDuotone\"\n        >purpleToPinkGradientDuotone</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"tealToLimeGradientDuotone\"\n        >tealToLimeGradientDuotone</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"redToYellowGradientDuotone\"\n        >redToYellowGradientDuotone</app-button\n      >\n    </div>\n  </div>\n\n  <div>\n    <h1 class=\"font-extrabold md:text-5xl lg:text-2xl dark:text-white\">\n      Style Gradient Outline\n    </h1>\n\n    <div class=\"flex gap-4 flex-wrap mt-2\">\n\n      <app-button [size]=\"size\" styleButton=\"purpleToBlueGradientOutline\"\n        >purpleToBlueGradientOutline</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"cyanToBlueGradientOutline\"\n        >cyanToBlueGradientOutline</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"greenToBlueGradientOutline\"\n        >greenToBlueGradientOutline</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"purpleToPinkGradientOutline\"\n        >purpleToPinkGradientOutline</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"tealToLimeGradientOutline\"\n        >tealToLimeGradientOutline</app-button\n      >\n      <app-button [size]=\"size\" styleButton=\"redToYellowGradientOutline\"\n        >redToYellowGradientOutline</app-button\n      >\n    </div>\n  </div>\n</section>\n"
+        },
+        {
+            "name": "ForestCastComponent",
+            "id": "component-ForestCastComponent-b50d648456df6fab277f96ab8a5d27e7b122406e01f9969dc8e355e65a60674441e4138e38419922f9dff5f0732a04e6baa0303e67c4084ce5bbc0102195ce1b",
+            "file": "src/app/Views/forest-cast/forest-cast.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-forest-cast",
+            "styleUrls": [
+                "./forest-cast.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./forest-cast.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "forecasts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WeatherForecast[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component} from '@angular/core';\nimport { HttpService } from '../../Services/http.service';\r\n\ninterface WeatherForecast {\n  date: string;\n  temperatureC: number;\n  temperatureF: number;\n  summary: string;\n}\n\n@Component({\n  selector: 'app-forest-cast',\n  templateUrl: './forest-cast.component.html',\n  styleUrls: ['./forest-cast.component.css']\n})\nexport class ForestCastComponent {\n\n  public forecasts?: WeatherForecast[];\n\n  constructor(private http: HttpService) {\n    this.http.GetForestCast().subscribe(result => {\n      this.forecasts = result;\n    }, error => console.error(error));\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./forest-cast.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 18,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "\n<section>\n  <p *ngIf=\"!forecasts\"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href=\"https://aka.ms/jspsintegrationangular\">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>\n\n  <table *ngIf=\"forecasts\">\n    <thead>\n      <tr>\n        <th>Date</th>\n        <th>Temp. (C)</th>\n        <th>Temp. (F)</th>\n        <th>Summary</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let forecast of forecasts\">\n        <td>{{ forecast.date }}</td>\n        <td>{{ forecast.temperatureC }}</td>\n        <td>{{ forecast.temperatureF }}</td>\n        <td>{{ forecast.summary }}</td>\n      </tr>\n    </tbody>\n  </table>\n</section>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-a71f246366d5d3dd2485d220bc2c384ceb3f056eb50faded8ff9e4a6404ca4a28c23117da4b98825de8da482bc2ba3b9abeab416745b32d1a89f68595d2dc939",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "MessageComponent",
+            "id": "component-MessageComponent-32a0c781164e63a1bacccaa4c109f6bbc00ff69d726cc718ec0c928548d8c7842d73bcfc4ee7058e2cc743e0069ebd21d81c171d991ac8dea4af040aadcb448d",
+            "file": "src/app/Components/message/message.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-message",
+            "styleUrls": [
+                "./message.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./message.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-message',\n  templateUrl: './message.component.html',\n  styleUrls: ['./message.component.css']\n})\nexport class MessageComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./message.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>message works!</p>\n"
+        },
+        {
+            "name": "NavBarComponent",
+            "id": "component-NavBarComponent-6fc07572be53e5ce6cccdb330c460d1cbf8f1a86bc06757391d1f30af995c42610c1a7d5f4b4f99c167f83736aba0beff032c9648e87ac33bb2aa7c0f2745d7e",
+            "file": "src/app/Components/nav-bar/nav-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-nav-bar",
+            "styleUrls": [
+                "./nav-bar.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./nav-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "routeActiveClass",
+                    "defaultValue": "'block py-2 pl-3 pr-4 text-white bg-blue-700 rounded'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "routeNoactiveClass",
+                    "defaultValue": "'block py-2 pl-3 pr-4 text-gray-900 rounded bg-gray-50 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "routes",
+                    "defaultValue": "RoutesPath",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "showMenu",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ToogleMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\nimport { RoutesPath } from '../../Constants/routes'\n\n@Component({\n  selector: 'app-nav-bar',\n  templateUrl: './nav-bar.component.html',\n  styleUrls: ['./nav-bar.component.css']\n})\nexport class NavBarComponent{\n\n  routes = RoutesPath\n\n  showMenu: boolean = false\n\n  routeActiveClass = 'block py-2 pl-3 pr-4 text-white bg-blue-700 rounded'\n\n  routeNoactiveClass = 'block py-2 pl-3 pr-4 text-gray-900 rounded bg-gray-50 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'\n\n  ToogleMenu() {\n    setTimeout(() => this.showMenu = !this.showMenu, 150)\r\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./nav-bar.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\r\n<nav class=\"border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 h-[72px]\">\r\n  <div class=\"w-full flex flex-wrap items-center justify-between mx-auto p-4 relative bg-gray-100\" style=\"box-shadow: -1px -3px 5px 3px black;\">\r\n    <a routerLink=\"/\" class=\"flex\">\r\n      <img src=\"../../../assets/images/drako-logo.jpg\" class=\"h-8 mr-3\" alt=\"Drako Logo\" />\r\n      <span class=\"self-center text-2xl font-semibold whitespace-nowrap dark:text-white\">Drako App</span>\r\n    </a>\r\n\r\n    <nav class=\"dark:bg-gray-700 hidden sm:!block\">\r\n      <div class=\"max-w-screen-xl px-4 py-3 mx-auto\">\r\n        <div class=\"flex items-center\">\r\n          <ul class=\"flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm\">\r\n            <li>\r\n              <a [routerLink]=\"routes.FOREST\" routerLinkActive #rla_m=\"routerLinkActive\"\r\n                 [class]=\" rla_m.isActive ? 'text-blue-700' : 'text-gray-900 dark:text-white hover:underline' \">\r\n                Clima\r\n              </a>\r\n            </li>\r\n            <li>\r\n              <a [routerLink]=\"routes.CARDS\" routerLinkActive #rla_m2=\"routerLinkActive\"\r\n                 [class]=\" rla_m2.isActive ? 'text-blue-700' : 'text-gray-900 dark:text-white hover:underline' \">\r\n                Tarjetas de Credito\r\n              </a>\r\n            </li>\r\n            <li>\r\n              <a [routerLink]=\"routes.COMP_DOC\" routerLinkActive #rla_m3=\"routerLinkActive\"\r\n                 [class]=\" rla_m3.isActive ? 'text-blue-700' : 'text-gray-900 dark:text-white hover:underline' \">\r\n                Doc\r\n              </a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n\r\n     <div class=\"sm:hidden\">\r\n        <button (click)=\"ToogleMenu()\" data-collapse-toggle=\"navbar-hamburger\" type=\"button\" class=\"inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600\" aria-controls=\"navbar-hamburger\" aria-expanded=\"false\">\r\n          <span class=\"sr-only\">Open main menu</span>\r\n          <svg class=\"w-6 h-6\" aria-hidden=\"true\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z\" clip-rule=\"evenodd\"></path></svg>\r\n        </button>\r\n     </div>\r\n\r\n  </div>\r\n</nav>\r\n\r\n<div *ngIf=\"showMenu\" class=\"fixed w-auto p-3 right-4 rounded bg-gray-100\" style=\" box-shadow: 1px 3px 6px 0px grey;\" >\r\n  <div class=\"absolut\" id=\"navbar-hamburger\">\r\n    <ul (click)=\"ToogleMenu()\"\r\n        class=\"flex flex-col gap-1 font-medium rounded-lg w-max\">\r\n      <li>\r\n        <a [routerLink]=\"routes.FOREST\" routerLinkActive #rla=\"routerLinkActive\"\r\n           [class]=\" rla.isActive ? routeActiveClass : routeNoactiveClass\">\r\n          Clima\r\n        </a>\r\n      </li>\r\n      <li>\r\n        <a [routerLink]=\"routes.CARDS\" routerLinkActive #rla2=\"routerLinkActive\"\r\n           [class]=\" rla2.isActive ? routeActiveClass : routeNoactiveClass\">\r\n          Tarjetas de Credito\r\n        </a>\r\n      </li>\r\n      <li>\r\n        <a [routerLink]=\"routes.CARDS\" routerLinkActive #rla3=\"routerLinkActive\"\r\n           [class]=\" rla3.isActive ? routeActiveClass : routeNoactiveClass\">\r\n          Doc\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</div>\r\n\r\n"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-f5d2fd9ba0ee70c24f514ef21ebdae50beb2e2f42594802a96cdbeb02a59371897162b6be17fcb45cdc0d237d3e4bee611d1ad1d446a54e0699ba35b48991b87",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 64
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport type { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-4f4271c0717f6cc846bc353e35ea3fa06cd87d191c6abaef56d2857fde2e613f8417567530406e852cf62c62e7a85a3c228fa3d99fa9e625095476d01b53a7e1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\nimport { MessageComponent } from './Components/message/message.component';\r\nimport { ChatComponent } from './Views/chat/chat.component';\r\nimport { CardsComponent } from './Views/cards/cards.component';\r\nimport { NavBarComponent } from './Components/nav-bar/nav-bar.component';\r\nimport { ForestCastComponent } from './Views/forest-cast/forest-cast.component';\r\nimport { ButtonComponent } from './Components/button/button.component';\r\nimport { DocComponent } from './Views/doc/doc.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    MessageComponent,\r\n    ChatComponent,\r\n    CardsComponent,\r\n    NavBarComponent,\r\n    ForestCastComponent,\r\n    ButtonComponent,\r\n    DocComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "CardsComponent"
+                        },
+                        {
+                            "name": "ChatComponent"
+                        },
+                        {
+                            "name": "DocComponent"
+                        },
+                        {
+                            "name": "ForestCastComponent"
+                        },
+                        {
+                            "name": "MessageComponent"
+                        },
+                        {
+                            "name": "NavBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-d240c8b0e5efb6bb778a2625c6d96c922a02703b7d992ec88ec04fbe32f04784042aa30af653c064f8394e997b814d6895c2bd77a16de2301a76a1c8e744d3a5",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule } from '@angular/router';\n\nimport { routes } from './Constants/routes'\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "classesButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  default:\r\n    'mr-2 mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800',\r\n  alternative:\r\n    'mr-2 mb-2 font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700',\r\n  dark: 'mr-2 mb-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',\r\n  light:\r\n    'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',\r\n  green:\r\n    'focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg  mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',\r\n  red: 'focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg  mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',\r\n  yellow:\r\n    'focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg mr-2 mb-2 dark:focus:ring-yellow-900',\r\n  purple:\r\n    'focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',\r\n  defaultPills:\r\n    'text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',\r\n  alternativePills:\r\n    'mr-2 mb-2  font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700',\r\n  darkPills:\r\n    'mr-2 mb-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',\r\n  greenPills:\r\n    'mr-2 mb-2 text-white bg-green-700 hover:bg-greeen-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full  text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900',\r\n  lightPills:\r\n    'mr-2 mb-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200  font-medium rounded-full  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',\r\n  redPills:\r\n    'mr-2 mb-2 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full  text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',\r\n  yellowPills:\r\n    'mr-2 mb-2 text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full  text-center dark:focus:ring-yellow-900',\r\n  purplePills:\r\n    'mb-2 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full  text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',\r\n  defaultGradMono:\r\n    'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenGradMono:\r\n    'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanGradMono:\r\n    'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealGradMono:\r\n    'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  limeGradMono:\r\n    'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redGradMono:\r\n    'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkGradMono:\r\n    'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleGradMono:\r\n    'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  defaultColoredShadows:\r\n    'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenColoredShadows:\r\n    'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanColoredShadows:\r\n    'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealColoredShadows:\r\n    'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  limeColoredShadows:\r\n    'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redColoredShadows:\r\n    'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkColoredShadows:\r\n    'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleColoredShadows:\r\n    'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToPinkGradientDuotone:\r\n    'text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkToOrageGradientDuotone:\r\n    'text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealToLimeGradientDuotone:\r\n    'text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redToYellowGradientDuotone:\r\n    'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800',\r\n  cyanToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800',\r\n  greenToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800',\r\n  purpleToPinkGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800',\r\n  tealToLimeGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800',\r\n  redToYellowGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400',\r\n  pinkToOrangeGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800',\r\n}"
+            },
+            {
+                "name": "classZises",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  xsm: 'px-3 py-2 text-xs',\r\n  sm: 'px-3 py-2 text-sm',\r\n  base: 'text-sm px-5 py-2.5',\r\n  lg: 'px-5 py-3 text-base',\r\n  xlg: 'text-base px-6 py-3.5',\r\n}"
+            },
+            {
+                "name": "ColoredShadows",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{ ...ExampleBasic }"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "ExampleBasic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryX",
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<app-button\r\n    size=\"${args.size}\"\r\n    [isLoading]=\"${args.isLoading}\"\r\n    [isDisable]=\"${args.isDisable}\"\r\n    styleButton=\"${args.styleButton}\">Style ${toCapitalize(\r\n      args.styleButton\r\n    )}</app-button>`,\r\n  }),\r\n  args: {\r\n    isDisable: false,\r\n    size: 'base',\r\n    isLoading: false,\r\n    styleButton: 'default',\r\n  },\r\n}"
+            },
+            {
+                "name": "ExampleDefaultPills",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{ ...ExampleBasic }"
+            },
+            {
+                "name": "GradientDuotone",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{ ...ExampleBasic }"
+            },
+            {
+                "name": "GradientMonochrome",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{ ...ExampleBasic }"
+            },
+            {
+                "name": "GradientOutline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{ ...ExampleBasic }"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.storiesxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.storiesxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Button>",
+                "defaultValue": "{\n  title: 'Example/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Header>",
+                "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.storiesxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Page>",
+                "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  argTypes: {\r\n    size: {\r\n      options: ['xsm', 'sm', 'base', 'lg', 'xlg'],\r\n      control: { type: 'radio' },\r\n    },\r\n    styleButton: {\r\n      options: [\r\n        'default',\r\n        'alternative',\r\n        'dark',\r\n        'light',\r\n        'green',\r\n        'red',\r\n        'yellow',\r\n        'purple',\r\n        'defaultPills',\r\n        'alternativePills',\r\n        'darkPills',\r\n        'greenPills',\r\n        'lightPills',\r\n        'redPills',\r\n      ],\r\n      control: { type: 'radio' },\r\n    },\r\n  },\r\n  args: {\r\n    isDisable: false,\r\n    size: 'base',\r\n    isLoading: false,\r\n    styleButton: 'default',\r\n  },\r\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": ".storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "RoutesPath",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Constants/routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  FOREST: 'forescast',\r\n  CARDS: 'cards',\r\n  COMP_DOC: 'comp-document'\r\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "spanClass",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/Components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'"
+            }
+        ],
+        "functions": [
+            {
+                "name": "isLetterCapitalize",
+                "file": "src/app/utils/isLetterCapitalize.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "''"
+                    }
+                ],
+                "returnType": "boolean",
+                "jsdoctags": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "''",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "toCapitalize",
+                "file": "src/app/utils/toCapitalize.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "string",
+                "jsdoctags": [
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "Size",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"xsm\" | \"sm\" | \"base\" | \"lg\" | \"xlg\"",
+                "file": "src/app/Components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "Size",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"xsm\" | \"sm\" | \"base\" | \"lg\" | \"xlg\"",
+                "file": "src/app/Views/doc/doc.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Button>",
+                "file": "src/stories/Button.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Header>",
+                "file": "src/stories/Header.storiesxxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Page>",
+                "file": "src/stories/Page.storiesxx.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "StoryX",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "src/app/Components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "StyleButton",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/app/Components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/Components/button/button.component.ts": [
+                {
+                    "name": "classesButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  default:\r\n    'mr-2 mb-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800',\r\n  alternative:\r\n    'mr-2 mb-2 font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700',\r\n  dark: 'mr-2 mb-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',\r\n  light:\r\n    'text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',\r\n  green:\r\n    'focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg  mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',\r\n  red: 'focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg  mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',\r\n  yellow:\r\n    'focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg mr-2 mb-2 dark:focus:ring-yellow-900',\r\n  purple:\r\n    'focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',\r\n  defaultPills:\r\n    'text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',\r\n  alternativePills:\r\n    'mr-2 mb-2  font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700',\r\n  darkPills:\r\n    'mr-2 mb-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full  dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',\r\n  greenPills:\r\n    'mr-2 mb-2 text-white bg-green-700 hover:bg-greeen-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full  text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900',\r\n  lightPills:\r\n    'mr-2 mb-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200  font-medium rounded-full  dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',\r\n  redPills:\r\n    'mr-2 mb-2 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full  text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',\r\n  yellowPills:\r\n    'mr-2 mb-2 text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full  text-center dark:focus:ring-yellow-900',\r\n  purplePills:\r\n    'mb-2 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full  text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900',\r\n  defaultGradMono:\r\n    'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenGradMono:\r\n    'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanGradMono:\r\n    'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealGradMono:\r\n    'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  limeGradMono:\r\n    'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redGradMono:\r\n    'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkGradMono:\r\n    'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleGradMono:\r\n    'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  defaultColoredShadows:\r\n    'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenColoredShadows:\r\n    'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanColoredShadows:\r\n    'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealColoredShadows:\r\n    'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  limeColoredShadows:\r\n    'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redColoredShadows:\r\n    'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkColoredShadows:\r\n    'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleColoredShadows:\r\n    'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  cyanToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  greenToBlueGradientDuotone:\r\n    'text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToPinkGradientDuotone:\r\n    'text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  pinkToOrageGradientDuotone:\r\n    'text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  tealToLimeGradientDuotone:\r\n    'text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  redToYellowGradientDuotone:\r\n    'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg  text-center mr-2 mb-2',\r\n  purpleToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800',\r\n  cyanToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800',\r\n  greenToBlueGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800',\r\n  purpleToPinkGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800',\r\n  tealToLimeGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800',\r\n  redToYellowGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400',\r\n  pinkToOrangeGradientOutline:\r\n    'relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800',\r\n}"
+                },
+                {
+                    "name": "classZises",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  xsm: 'px-3 py-2 text-xs',\r\n  sm: 'px-3 py-2 text-sm',\r\n  base: 'text-sm px-5 py-2.5',\r\n  lg: 'px-5 py-3 text-base',\r\n  xlg: 'text-base px-6 py-3.5',\r\n}"
+                },
+                {
+                    "name": "spanClass",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'"
+                }
+            ],
+            "src/app/Components/button/button.component.stories.ts": [
+                {
+                    "name": "ColoredShadows",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ ...ExampleBasic }"
+                },
+                {
+                    "name": "ExampleBasic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryX",
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<app-button\r\n    size=\"${args.size}\"\r\n    [isLoading]=\"${args.isLoading}\"\r\n    [isDisable]=\"${args.isDisable}\"\r\n    styleButton=\"${args.styleButton}\">Style ${toCapitalize(\r\n      args.styleButton\r\n    )}</app-button>`,\r\n  }),\r\n  args: {\r\n    isDisable: false,\r\n    size: 'base',\r\n    isLoading: false,\r\n    styleButton: 'default',\r\n  },\r\n}"
+                },
+                {
+                    "name": "ExampleDefaultPills",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ ...ExampleBasic }"
+                },
+                {
+                    "name": "GradientDuotone",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ ...ExampleBasic }"
+                },
+                {
+                    "name": "GradientMonochrome",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ ...ExampleBasic }"
+                },
+                {
+                    "name": "GradientOutline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{ ...ExampleBasic }"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: ButtonComponent,\r\n  argTypes: {\r\n    size: {\r\n      options: ['xsm', 'sm', 'base', 'lg', 'xlg'],\r\n      control: { type: 'radio' },\r\n    },\r\n    styleButton: {\r\n      options: [\r\n        'default',\r\n        'alternative',\r\n        'dark',\r\n        'light',\r\n        'green',\r\n        'red',\r\n        'yellow',\r\n        'purple',\r\n        'defaultPills',\r\n        'alternativePills',\r\n        'darkPills',\r\n        'greenPills',\r\n        'lightPills',\r\n        'redPills',\r\n      ],\r\n      control: { type: 'radio' },\r\n    },\r\n  },\r\n  args: {\r\n    isDisable: false,\r\n    size: 'base',\r\n    isLoading: false,\r\n    styleButton: 'default',\r\n  },\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/Button.storiesxxx.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Button>",
+                    "defaultValue": "{\n  title: 'Example/Button',\n  component: Button,\n  tags: ['autodocs'],\n  render: (args: Button) => ({\n    props: {\n      backgroundColor: null,\n      ...args,\n    },\n  }),\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                }
+            ],
+            "src/stories/Header.storiesxxx.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Header>",
+                    "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                }
+            ],
+            "src/stories/Page.storiesxx.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.storiesxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = await canvas.getByRole('button', {\n      name: /Log in/i,\n    });\n    await userEvent.click(loginButton);\n  },\n}"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.storiesxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args: Page) => ({\n    props: args,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.storiesxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Page>",
+                    "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                }
+            ],
+            ".storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": ".storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                }
+            ],
+            "src/app/Constants/routes.ts": [
+                {
+                    "name": "RoutesPath",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/Constants/routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  FOREST: 'forescast',\r\n  CARDS: 'cards',\r\n  COMP_DOC: 'comp-document'\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/app/utils/isLetterCapitalize.ts": [
+                {
+                    "name": "isLetterCapitalize",
+                    "file": "src/app/utils/isLetterCapitalize.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "''"
+                        }
+                    ],
+                    "returnType": "boolean",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "defaultValue": "''",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "src/app/utils/toCapitalize.ts": [
+                {
+                    "name": "toCapitalize",
+                    "file": "src/app/utils/toCapitalize.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "string",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/app/Components/button/button.component.ts": [
+                {
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"xsm\" | \"sm\" | \"base\" | \"lg\" | \"xlg\"",
+                    "file": "src/app/Components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "StyleButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/app/Components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
+            "src/app/Views/doc/doc.component.ts": [
+                {
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"xsm\" | \"sm\" | \"base\" | \"lg\" | \"xlg\"",
+                    "file": "src/app/Views/doc/doc.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ],
+            "src/stories/Button.storiesxxx.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "src/stories/Button.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "src/stories/Header.storiesxxx.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Header>",
+                    "file": "src/stories/Header.storiesxxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "src/stories/Page.storiesxx.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Page>",
+                    "file": "src/stories/Page.storiesxx.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "src/app/Components/button/button.component.stories.ts": [
+                {
+                    "name": "StoryX",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "src/app/Components/button/button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/Constants/routes.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "redirectTo": "forescast",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "forescast",
+                        "component": "ForestCastComponent"
+                    },
+                    {
+                        "path": "cards",
+                        "component": "CardsComponent"
+                    },
+                    {
+                        "path": "cards",
+                        "component": "CardsComponent"
+                    },
+                    {
+                        "path": "comp-document",
+                        "component": "DocComponent"
+                    },
+                    {
+                        "path": "**",
+                        "redirectTo": "forescast"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 1,
+        "status": "low",
+        "files": [
+            {
+                "filePath": ".storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ColoredShadows",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ExampleBasic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ExampleDefaultPills",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GradientDuotone",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GradientMonochrome",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GradientOutline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "classesButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "classZises",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/button/button.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "spanClass",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/message/message.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MessageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Components/nav-bar/nav-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Constants/routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RoutesPath",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Models/Interfaces/Responses/forest.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ForecastResponse",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Models/Interfaces/common.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IRoutesPath",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Services/http.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Views/cards/cards.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Views/chat/chat.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChatComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Views/doc/doc.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DocComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Views/forest-cast/forest-cast.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ForestCastComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Views/forest-cast/forest-cast.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "WeatherForecast",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/utils/isLetterCapitalize.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "isLetterCapitalize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/utils/toCapitalize.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "toCapitalize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.storiesxxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.storiesxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.storiesxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.storiesxx.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            }
+        ]
+    }
+}

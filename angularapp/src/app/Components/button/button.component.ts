@@ -145,6 +145,7 @@ export class ButtonComponent implements OnInit {
         'tealToLimeGradientOutline',
       ];
       if (classesOutline.includes(this.styleButton)) {
+        this.classZise = ''
         this.classText = `${classZises.base} ${spanClass}`;
       }
     }
