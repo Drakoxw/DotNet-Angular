@@ -7,7 +7,7 @@ import { CreditCardPayload } from '../Models/Interfaces';
   providedIn: 'root'
 })
 export class HttpService {
-  private uri = 'https://localhost:4200'
+  private uri = 'https://localhost:7011'
   constructor(private http: HttpClient) { }
 
   GetForestCast() {
@@ -15,7 +15,7 @@ export class HttpService {
   }
 
   getListCards() {
-    return this.http.get<CreditCardResponse[]>('https://localhost:7011/api/creditcards')
+    return this.http.get<CreditCardResponse[]>(`${this.uri}/api/CreditCards`)
   }
 
   getCardId(id: number) {
