@@ -6,97 +6,104 @@
     [formGroup]="form"
     (ngSubmit)="saveCardCredit()"
   >
-    <div class="w-full flex gap-3 justify-center items-end">
-      <div class="w-4/12">
-        <label for="holder" [ngClass]="[class.LABEL.CLEAR]">Holder card</label>
-        <input
-          type="text"
-          id="holder"
-          name="cardHolder"
-          [ngClass]=" cardHolderError ? class.INPUT.ERROR : class.INPUT.CLEAR "
-          formControlName="cardHolder"
-          placeholder="User name"
-        />
-        <div [class]="class.HELP_TEXT.ERROR" *ngIf="cardHolderError">
-          <p [class]="class.HELP_TEXT.P_ERROR">
-            Este campo es <span class="font-bold">requerido </span>
-          </p>
-        </div>
-      </div>
-
-      <div class="w-3/12">
-        <label for="card-number" [ngClass]="[class.LABEL.CLEAR]"
-          >Card Number</label
-        >
-        <input
-          type="text"
-          id="card-number"
-          maxlength="16"
-          [ngClass]=" cardNumberError ? class.INPUT.ERROR : class.INPUT.CLEAR "
-          formControlName="cardNumber"
-          name="cardNumber"
-          placeholder="1111222233334444"
-        />
-        <div *ngIf="cardNumberError" [class]="class.HELP_TEXT.ERROR" >
-          <p *ngIf="cardNumber?.errors?.['required']" [class]="class.HELP_TEXT.P_ERROR">
-            Este campo es <span class="font-bold">requerido</span>
-          </p>
-          <p *ngIf="cardNumber?.errors?.['pattern']" [class]="class.HELP_TEXT.P_ERROR">
-            Este campo es <span class="font-bold">númerico</span>
-          </p>
-        </div>
-      </div>
-
-      <div class="w-3/12 flex gap-4">
+    <div [ngClass]="['w-full flex gap-3 justify-center items-center', addClass ]">
+      <div class="flex gap-3">
         <div class="w-6/12">
-          <label for="exp" [ngClass]="[class.LABEL.CLEAR]">Expiration</label>
+          <label for="holder" [ngClass]="[class.LABEL.CLEAR]">Holder card</label>
           <input
             type="text"
-            id="exp"
-            [ngClass]=" expireError ? class.INPUT.ERROR : class.INPUT.CLEAR "
-            formControlName="expire"
-            name="expire"
-            placeholder="12/35"
+            id="holder"
+            name="cardHolder"
+            [ngClass]=" cardHolderError ? class.INPUT.ERROR : class.INPUT.CLEAR "
+            formControlName="cardHolder"
+            placeholder="User name"
           />
-          <div *ngIf="expireError" [class]="class.HELP_TEXT.ERROR" >
-            <p *ngIf="expire?.errors?.['required']" [class]="class.HELP_TEXT.P_ERROR">
-              <span class="font-bold">Requerido</span>
-            </p>
-            <p *ngIf="expire?.errors?.['pattern']" [class]="class.HELP_TEXT.P_ERROR">
-              <span class="font-bold">( mm/yy )</span>
+          <div [class]="class.HELP_TEXT.ERROR" *ngIf="cardHolderError">
+            <p [class]="class.HELP_TEXT.P_ERROR">
+              Este campo es <span class="font-bold">requerido </span>
             </p>
           </div>
         </div>
 
         <div class="w-6/12">
-          <label for="cvv" [ngClass]="[class.LABEL.CLEAR]">CVV</label>
+          <label for="card-number" [ngClass]="[class.LABEL.CLEAR]"
+            >Card Number</label
+          >
           <input
             type="text"
-            id="cvv"
-            maxlength="3"
-            [ngClass]=" cvvError ? class.INPUT.ERROR : class.INPUT.CLEAR "
-            formControlName="cvv"
-            placeholder="123"
+            id="card-number"
+            maxlength="16"
+            [ngClass]=" cardNumberError ? class.INPUT.ERROR : class.INPUT.CLEAR "
+            formControlName="cardNumber"
+            name="cardNumber"
+            placeholder="1111222233334444"
           />
-          <div *ngIf="cvvError" [class]="class.HELP_TEXT.ERROR" >
-            <p *ngIf="cvv?.errors?.['required']" [class]="class.HELP_TEXT.P_ERROR">
-              <span class="font-bold">Requerido</span>
+          <div *ngIf="cardNumberError" [class]="class.HELP_TEXT.ERROR" >
+            <p *ngIf="cardNumber?.errors?.['required']" [class]="class.HELP_TEXT.P_ERROR">
+              Este campo es <span class="font-bold">requerido</span>
             </p>
-            <p *ngIf="cvv?.errors?.['pattern']" [class]="class.HELP_TEXT.P_ERROR">
-              <span class="font-bold">Númerico</span>
+            <p *ngIf="cardNumber?.errors?.['pattern']" [class]="class.HELP_TEXT.P_ERROR">
+              Este campo es <span class="font-bold">númerico</span>
             </p>
           </div>
         </div>
       </div>
 
-      <div class="w-2/12 h-auto">
-        <app-button
-          type="submit"
-          [isDisable]="form.invalid"
-          styleButton="greenColoredShadows"
-          >Add Card</app-button
-        >
+      <div class="flex items-end gap-3">
+        <div class="w-8/12/12 flex gap-4">
+          <div class="w-6/12">
+            <label for="exp" [ngClass]="[class.LABEL.CLEAR]">Expiration</label>
+            <input
+              type="text"
+              id="exp"
+              [ngClass]=" expireError ? class.INPUT.ERROR : class.INPUT.CLEAR "
+              formControlName="expire"
+              name="expire"
+              placeholder="12/35"
+            />
+            <div *ngIf="expireError" [class]="class.HELP_TEXT.ERROR" >
+              <p *ngIf="expire?.errors?.['required']" [class]="class.HELP_TEXT.P_ERROR">
+                <span class="font-bold">Requerido</span>
+              </p>
+              <p *ngIf="expire?.errors?.['pattern']" [class]="class.HELP_TEXT.P_ERROR">
+                <span class="font-bold">( mm/yy )</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="w-6/12">
+            <label for="cvv" [ngClass]="[class.LABEL.CLEAR]">CVV</label>
+            <input
+              type="text"
+              id="cvv"
+              maxlength="3"
+              [ngClass]=" cvvError ? class.INPUT.ERROR : class.INPUT.CLEAR "
+              formControlName="cvv"
+              placeholder="123"
+            />
+            <div *ngIf="cvvError" [class]="class.HELP_TEXT.ERROR" >
+              <p *ngIf="cvv?.errors?.['required']" [class]="class.HELP_TEXT.P_ERROR">
+                <span class="font-bold">Requerido</span>
+              </p>
+              <p *ngIf="cvv?.errors?.['pattern']" [class]="class.HELP_TEXT.P_ERROR">
+                <span class="font-bold">Númerico</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-4/12 h-auto">
+
+          <app-button
+            style="width: 100%;"
+            type="submit"
+            [isDisable]="form.invalid"
+            [styleButton]=" editCard ? 'greenColoredShadows' : 'greenColoredShadows' "
+            >{{ editCard ? 'Edit Card' : 'Add Card' }}</app-button
+          >
+        </div>
       </div>
+
     </div>
   </form>
 </div>

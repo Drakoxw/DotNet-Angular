@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { CLASSFORM } from 'src/app/Constants';
@@ -9,7 +9,9 @@ import { CreditCardService } from 'src/app/Services/credit-card.service';
   selector: 'app-card-form',
   templateUrl: './card-form.component.html',
 })
-export class CardFormComponent {
+export class CardFormComponent implements OnInit {
+  @Input() editCard!: CreditCardPayload
+  @Input() addClass?: string = ''
   class = CLASSFORM;
   form: FormGroup;
 
@@ -52,8 +54,32 @@ export class CardFormComponent {
       ],
     });
   }
+  ngOnInit(): void {
+    if (this.editCard) {
+      this.form.get('cardHolder')?.setValue(this.editCard.cardHolder)
+      this.form.get('cardNumber')?.setValue(this.editCard.cardNumber)
+      this.form.get('expire')?.setValue(this.editCard.expire)
+      this.form.get('cvv')?.setValue(this.editCard.cvv)
+    }
+  }
 
   saveCardCredit() {
+    const payload: CreditCardPayload = {
+      cardHolder: this.cardHolder?.value,
+      cardNumber: this.cardNumber?.value,
+      expire: this.expire?.value,
+      cvv: this.cvv?.value
+    }
+    this.form.reset()
+    if (this.editCard) {
+      payload.id = this.editCard.id
+      this.cardServ.editCard(Number(payload.id), payload)
+    } else {
+      this.cardServ.createCard(payload)
+    }
+  }
+
+  editCardCredit() {
     const payload: CreditCardPayload = {
       cardHolder: this.cardHolder?.value,
       cardNumber: this.cardNumber?.value,

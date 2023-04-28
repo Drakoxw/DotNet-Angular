@@ -16,6 +16,8 @@ import { DocComponent } from './Views/doc/doc.component';
 import { CardListComponent } from './Components/creditCard/card-list/card-list.component';
 import { CardFormComponent } from './Components/creditCard/card-form/card-form.component';
 import { HttpRequestInterceptor } from './Core/http-request.interceptor';
+import { CardTableElementComponent } from './Components/creditCard/card-table-element/card-table-element.component';
+import { ModalComponent } from './Components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HttpRequestInterceptor } from './Core/http-request.interceptor';
     ButtonComponent,
     DocComponent,
     CardListComponent,
-    CardFormComponent
+    CardFormComponent,
+    CardTableElementComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule

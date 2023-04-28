@@ -1,0 +1,71 @@
+
+<section *ngIf="creditCard" class="border-b dark:border-gray-700 flex items-center">
+  <div class="w-4/12 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white  text-center">
+    {{ creditCard.cardHolder }}
+  </div>
+  <td class="w-1/5 py-3">{{ creditCard.cardNumber }}</td>
+  <td class="w-1/5 py-3">{{ creditCard.expire }}</td>
+  <td class="w-1/5 py-3 pl-4">{{ creditCard.cvv }}</td>
+  <td class="w-1/12 py-3 flex items-center justify-end relative">
+    <button (click)="toogle()"
+      [id]="'dropdown-button-' + creditCard.id"
+      data-dropdown-toggle="apple-imac-27-dropdown"
+      class="inline-flex items-center p-0.5 mr-16 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
+      type="button"
+    >
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        fill="currentColor"
+        viewbox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
+        />
+      </svg>
+    </button>
+    <div
+      [id]="'modal-option-' + creditCard.id"
+      style="box-shadow: 3px 4px 4px 2px #c9c5c5;"
+      class="z-10 w-44 absolute top-8 right-4 box-s bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
+      [ngClass]=" hidden ? 'hidden' : '' "
+    >
+      <ul
+        class="py-1 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="apple-imac-27-dropdown-button"
+      >
+        <li (click)="editItem()">
+          <span
+            class="block cursor-pointer py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >Edit</span
+          >
+        </li>
+        <li (click)="deleteItem()">
+          <span
+            class="block cursor-pointer py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >Delete</span
+          >
+        </li>
+      </ul>
+    </div>
+  </td>
+</section>
+
+<app-modal (closeModal)="closeModal()" title="Editar" widthClass="w-[455px]" [showModal]="showModal">
+  <div class="p-4">
+    <app-card-form [editCard]="creditCard" addClass="flex-wrap"></app-card-form>
+  </div>
+</app-modal>
+
+<app-modal (closeModal)="closeModal()" title="Confirma la eliminacion!" [showModal]="showModalDelete">
+  <div class="p-4">
+
+    <h1 class="font-medium text-gray-900">Desea eliminar este registro?</h1>
+
+    <div class="w-full flex items-center justify-end gap-8 mt-4">
+      <app-button styleButton="defaultGradMono" (buttonClick)="closeModal()">Cancelar</app-button>
+      <app-button styleButton="redGradMono" (buttonClick)="serviceDelete()">Confirmar</app-button>
+    </div>
+  </div>
+</app-modal>
